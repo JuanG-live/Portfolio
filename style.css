@@ -32,7 +32,17 @@ p {
 a {
     text-decoration: none;
 }
+/* Header */
+#mainheader {
+    background-image: url("./asset/imagenes/home.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    text-align: center;
 
+}
 /* Utility Classes */ 
 .container {
     display: block;
@@ -49,56 +59,44 @@ a {
     padding: 15px 40px;
     letter-spacing: 10px
 }
+
 .btn-outline {
     background-color: transparent;
     border: 1px solid #fff;
     color: #fff;
     text-transform: uppercase;
-    font-weight: 300;
 }
 .btn-outline:hover {
     background: #fff;
     color: #000;
 }
-
 /* Navbar */
 #navbar {
-    width: 92%;
-    overflow: auto;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    
 }
-
 #navbar a {
     color: #000;
+    padding-left: 20px;
+    color:aliceblue;
 }
-
 #navbar .logo {
-    float: left;
     display: flex;
     align-items: center;
 }
-
-#navbar img {
-    display: flex;
-}
-
 #navbar ul {
     list-style: none;
-    float: right;
+    display: flex;
 }
 #navbar ul li a {
     display: block;
     padding: 20px;
-    text-align: center;
+    color: aliceblue;
 }
-#navbar ul li {
-    float:left;
-}
-
 /* Logo */
-
 .logo {
 display: block;
 width: 3rem;
@@ -115,35 +113,32 @@ white-space: nowrap;
 	flex-wrap: wrap;
 	align-items: center;
 }
-/* Showcase */
+
+/* Showcase 
 #showcase {
-    background: url('/Portfolio/Img/showcase.jpg');
+    background: url('./asset/imagenes/showcase.jpg');
     background-repeat: no-repeat;
     background-position: center;
     height: 500px;
     background-size: cover;
     text-align: center;
     padding: 100px;
-}
+}*/
 
 #showcase .btn {
     margin-top: 250px;
 }
 
 /* proyectos */
-
 #projects {
-    padding: 80px 0;
+    padding: 90px 0;
 }
-
 .projects-row {
     display: flex;
 }
-
 .projects-row img {
     width: 100%;
 }
-
 /* About */
 #about {
     padding: 80px o;
