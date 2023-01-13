@@ -34,7 +34,7 @@ a {
 }
 /* Header */
 #mainheader {
-    background-image: url("./asset/imagenes/home.jpg");
+    background-image: url("./imagenes/home.jpg");
     background-repeat: no-repeat;
     background-position: center;
     height: auto;
@@ -113,17 +113,6 @@ white-space: nowrap;
 	flex-wrap: wrap;
 	align-items: center;
 }
-
-/* Showcase 
-#showcase {
-    background: url('./asset/imagenes/showcase.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 500px;
-    background-size: cover;
-    text-align: center;
-    padding: 100px;
-}*/
 
 #showcase .btn {
     margin-top: 250px;
