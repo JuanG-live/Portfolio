@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+}
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-bottom: 50px;
+}
+h4 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+p {
+  font-size: 1rem;
+  margin: 10px 0;
+  line-height: 1.7em;
+  color: #000;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* SECCION H E A D E R */
+#mainheader {
+  background: linear-gradient(
+      to top,
+      rgba(30, 35, 38, 0.1),
+      rgba(30, 35, 38, 1)
+    ),
+    url(./assets/home.jpg);
+  background-size: cover;
+  color: #fff;
+  height: 100vh;
+  background-position: center;
+  text-align: center;
+}
+.container-home {
+  padding: 150px;
+  text-align: center;
+}
+.container-home h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  animation: fadein 4s;
+}
+.container-home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Utility Classes */
+.container {
+  display: block;
+  margin: 0 auto;
+  max-width: 1300px;
+}
+.large {
+  font-size: 20px;
+}
+
+/* Boton de PROYECTO */
+.btn-outline {
+  display: inline-block;
+  color: white;
+  font-size: 15px;
+  padding: 15px 40px;
+  letter-spacing: 10px;
+  border: 2px solid white;
+  transition: transform 0.3s ease-in-out;
+}
+.btn-outline:hover {
+  transform: scale(1.2);
+}
+
+/* Navbar */
+#navbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease; /* Agrega una transición suave */
+}
+#navbar a {
+  color: #000;
+  padding-left: 20px;
+  color: aliceblue;
+}
+#navbar .logo {
+  display: flex;
+  align-items: center;
+}
+#navbar ul {
+  list-style: none;
+  display: flex;
+}
+#navbar ul li a {
+  display: block;
+  padding: 20px;
+  color: aliceblue;
+}
+#navbar ul li a:hover {
+  color: #ae556f;
+  transition: color 0.4s ease;
+}
+
+/* Logo */
+.logo {
+  display: block;
+  width: 3rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.name {
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
+}
+.header_name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* SECCION P R O J E C T S */
+#projects {
+  padding: 60px 70px;
+  height: 600px;
+  width: 100%;
+  background-color: #0000001d;
+}
+.projects-row {
+  display: flex;
+}
+.projects-row img {
+  width: 100%;
+}
+.projects-row-detail {
+  text-align: center;
+  position: relative;
+}
+.project1, .project2, .project3{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* BOTON PROYECTOS */
+.btn-deploy,
+.btn-codigo {
+  display: block;
+  border: 2px solid white;
+  padding: 15px;
+  background-color: rgba(34, 39, 42, 0.498);
+}
+.btn-deploy {
+  margin-bottom: 10px;
+}
+.about-row-experience,
+.about-row-me {
+  width: 50%;
+  padding-left: 50px;
+}
+.project-buttons {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+.btn-deploy:hover,
+.btn-codigo:hover {
+  transition: background-color 0.3s ease-in-out;
+  background-color: #fff;
+  color: #000;
+}
+.btn-codigo:active,
+.btn-deploy:active {
+  transform: translateY(2px);
+}
+
+/* SECCION S O B R E  M I  */
+#about {
+  padding: 60px 70px;
+  height: 600px;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+.about-row {
+  display: flex;
+  text-align: center;
+  position: relative;
+}
+.large {
+  text-align:justify;
+}
+
+/* SECCION C O N T A C T O */
+#contact {
+  padding: 60px 70px;
+  height: 600px;
+  width: 100%;
+  background-color: #f9f9f9c0;
+}
+.contact-row {
+  display: flex;
+}
+.fa-brands,
+.fa-solid {
+  font-size: 100px;
+}
+.contact-row-icon {
+  width: 50%;
+  text-align: center;
+}
+
+/* SECCION F O O T E R */
+#mainfooter {
+  background-color: #fff;
+  text-align: center;
+  padding: 30px;
+}
