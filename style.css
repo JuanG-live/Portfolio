@@ -8,7 +8,7 @@
 }
 html,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "sans-serif";
 }
 h2 {
   font-size: 2rem;
@@ -16,6 +16,7 @@ h2 {
   text-transform: uppercase;
   font-weight: 500;
   padding-bottom: 50px;
+  color: white;
 }
 h4 {
   font-size: 1.3rem;
@@ -27,7 +28,6 @@ p {
   font-size: 1rem;
   margin: 10px 0;
   line-height: 1.7em;
-  color: #000;
 }
 a {
   text-decoration: none;
@@ -63,12 +63,19 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+#go-to-top{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
 
 /* Utility Classes */
 .container {
   display: block;
   margin: 0 auto;
   max-width: 1300px;
+  width: 100%;
 }
 .large {
   font-size: 20px;
@@ -87,6 +94,9 @@ a {
 .btn-outline:hover {
   transform: scale(1.2);
 }
+.project1, .project2, .project3{
+  color: white;
+}
 
 /* Navbar */
 #navbar {
@@ -96,7 +106,7 @@ a {
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   transition: all 0.3s ease; /* Agrega una transición suave */
 }
 #navbar a {
@@ -145,7 +155,7 @@ a {
   padding: 60px 70px;
   height: 600px;
   width: 100%;
-  background-color: #0000001d;
+  background-color: #000000ef;
 }
 .projects-row {
   display: flex;
@@ -191,28 +201,46 @@ a {
   transform: translateY(2px);
 }
 
-/* SECCION S O B R E  M I  */
+/* SECCION A C E R C A  D E  M I   */
 #about {
   padding: 60px 70px;
   height: 600px;
   width: 100%;
-  background-color: #f9f9f9;
+  background-image: url(/assets/fondo\ sobre\ mi.jpg);
+  background-position: center;
+  background-size: cover;
+}
+#skills {
+    font-size: 2rem;
+    list-style-type: none;
+}
+#skills li i {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+ul {
+  column-count: 3;
 }
 .about-row {
   display: flex;
   text-align: center;
   position: relative;
+  color: white;
 }
-.about-row-experience,
+.title-about-me{
+  color:#ae556f;
+}
 .about-row-me {
   width: 100%;
+  background-color: #000000db;
+  margin: 20px;
+  padding: 20px;
+
+
 }
 .large {
   text-align:justify;
-}
-.container{
-    width: 100%;
-  padding-left: 50px;
+  color: white;
 }
 
 /* SECCION C O N T A C T O */
@@ -221,6 +249,9 @@ a {
   height: 600px;
   width: 100%;
   background-color: #f9f9f9c0;
+}
+.container-contact, p{
+  color: black;
 }
 .contact-row {
   display: flex;
