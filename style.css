@@ -155,7 +155,11 @@ a {
   padding: 60px 70px;
   height: 600px;
   width: 100%;
-  background-color: #000000ef;
+  background: linear-gradient(
+    to top,
+    rgba(37, 30, 38, 0.801),
+    rgba(30, 35, 38, 1)
+  )
 }
 .projects-row {
   display: flex;
@@ -183,7 +187,6 @@ a {
 .btn-deploy {
   margin-bottom: 10px;
 }
-
 .project-buttons {
   position: absolute;
   left: 50%;
@@ -211,7 +214,6 @@ a {
   background-size: cover;
 }
 #skills {
-    font-size: 2rem;
     list-style-type: none;
 }
 #skills li i {
@@ -219,7 +221,7 @@ a {
     margin-right: 0.5rem;
 }
 ul {
-  column-count: 3;
+  column-count: 2;
 }
 .about-row {
   display: flex;
@@ -235,8 +237,6 @@ ul {
   background-color: #000000db;
   margin: 20px;
   padding: 20px;
-
-
 }
 .large {
   text-align:justify;
@@ -246,12 +246,11 @@ ul {
 /* SECCION C O N T A C T O */
 #contact {
   padding: 60px 70px;
-  height: 600px;
-  width: 100%;
-  background-color: #f9f9f9c0;
+  height: auto;
+  background-color: #000000d2;
 }
 .container-contact, p{
-  color: black;
+  color: white;
 }
 .contact-row {
   display: flex;
@@ -263,6 +262,10 @@ ul {
 .contact-row-icon {
   width: 50%;
   text-align: center;
+}
+.container-contact p:hover{
+  color: #ae556f;
+  transition: color 0.3s ease;
 }
 
 /* SECCION F O O T E R */
