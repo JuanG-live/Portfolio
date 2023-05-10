@@ -8,7 +8,7 @@
 }
 html,
 body {
-  font-family: "Montserrat", "sans-serif";
+  font-family: "Montserrat", sans-serif;
 }
 h2 {
   font-size: 2rem;
@@ -170,11 +170,44 @@ a {
 .projects-row-detail {
   text-align: center;
   position: relative;
+  margin-right: 20px;
 }
-.project1, .project2, .project3{
-  font-size: 1.3rem;
+.project-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.projects-row-detail:hover .project-overlay {
+  opacity: 1;
+}
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+.btn-deploy, .btn-codigo {
+  display: block;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
   font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
 }
+
 
 /* BOTON PROYECTOS */
 .btn-deploy,
@@ -186,12 +219,6 @@ a {
 }
 .btn-deploy {
   margin-bottom: 10px;
-}
-.project-buttons {
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50%, -50%);
 }
 .btn-deploy:hover,
 .btn-codigo:hover {
