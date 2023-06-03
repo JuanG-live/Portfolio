@@ -39,7 +39,7 @@ a {
   background: linear-gradient(
       to top,
       rgba(255, 255, 255, 0.13),
-      rgba(30, 35, 38, 0.42)
+      rgba(18, 21, 23, 0.621)
     ),
     url(./assets/Home\ 1.jpg);
   height: 100vh;
@@ -59,7 +59,7 @@ a {
   top: 50%;
   left: 35%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.053);
+  background-color: rgba(255, 255, 255, 0.411);
   border-radius: 20px;
   padding:60px;
 }
@@ -148,14 +148,15 @@ a {
 #projects {
   padding: 60px 70px;
   height: 600px;
-  width: 100%;
   background: linear-gradient(
-    to top,
-    rgba(37, 30, 38, 0.801),
-    rgba(30, 35, 38, 1)
-  );
-  position: relative;
-  z-index: 1;
+      to top,
+      rgba(30, 35, 38, 0.42),
+      rgba(255, 255, 255, 0.13)
+    ),
+    url(./assets/Proyectos\ 2.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 }
 .projects-row {
   display: flex;
