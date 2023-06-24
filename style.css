@@ -16,7 +16,7 @@ h2 {
   text-transform: uppercase;
   font-weight: 500;
   padding-bottom: 50px;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 h4 {
   font-size: 1.3rem;
@@ -31,22 +31,21 @@ p {
 }
 a {
   text-decoration: none;
-  color: white;
 }
 
 /* SECCION H E A D E R */
 #mainheader {
   background: linear-gradient(
       to top,
-      rgba(255, 255, 255, 0.13),
-      rgba(18, 21, 23, 0.621)
+      rgba(255, 255, 255, 0.09),
+      rgba(18, 21, 23, 0.429)
     ),
     url(./assets/Home\ 1.jpg);
   height: 100vh;
   background-size: auto 100%;
   background-position: right;
   background-repeat: no-repeat;
-  color: #cfb75a;
+  color: #000000;
   text-align:center;
 }
 .container-home h3 {
@@ -59,7 +58,6 @@ a {
   top: 50%;
   left: 35%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.411);
   border-radius: 20px;
   padding:60px;
 }
@@ -89,7 +87,7 @@ a {
   transform: scale(1.2);
 }
 .project1, .project2, .project3{
-  color: white;
+  color: rgba(255, 255, 255, 0.236);
 }
 
 /* Navbar */
@@ -150,10 +148,10 @@ a {
   height: 600px;
   background: linear-gradient(
       to top,
-      rgba(30, 35, 38, 0.42),
-      rgba(255, 255, 255, 0.13)
+      rgba(30, 35, 38, 0.682),
+      rgba(255, 255, 255, 0.412)
     ),
-    url(./assets/Proyectos\ 2.jpg);
+    url();
   background-position: left;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -163,6 +161,7 @@ a {
 }
 .projects-row img {
   width: 100%;
+  height: 300px;
 }
 .projects-row-detail {
   text-align: center;
