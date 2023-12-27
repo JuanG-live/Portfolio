@@ -8,7 +8,7 @@
 }
 html,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "sans-serif";
 }
 h2 {
   font-size: 2rem;
@@ -38,9 +38,8 @@ a {
   background: linear-gradient(
       to top,
       rgba(255, 255, 255, 0.09),
-      rgba(18, 21, 23, 0.429)
-    ),
-    url(./assets/Home\ 1.jpg);
+      rgba(51, 69, 82, 0.878)
+    );
   height: 100vh;
   background-size: auto 100%;
   background-position: right;
@@ -56,10 +55,11 @@ a {
 .container-home {
   position: absolute;
   top: 50%;
-  left: 35%;
+  left: 25%;
   transform: translate(-50%, -50%);
-  border-radius: 20px;
-  padding:60px;
+}
+#presentation {
+font-family: ;
 }
 
 /* Utility Classes */
