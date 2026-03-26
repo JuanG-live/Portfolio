@@ -42,3 +42,22 @@ ul li a.active {
     background-color: #415b69;
 }
 
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 400px;
+    padding: 0 80px;
+}
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: space;
+    
+}
