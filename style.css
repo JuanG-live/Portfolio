@@ -7,10 +7,38 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+:root {
+    --color-bg: #628395;
+    --color-accent: #96897B;
+}
+
+.navbar {
+    background-color: var(--color-bg);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 20px;
+    margin: 0;
+    overflow: hidden;
 }
+
+ul li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+}
+
+ul li a:hover {
+    background-color: #415b69;
+}
+
+ul li a.active {
+    background-color: #415b69;
+}
+
