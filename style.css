@@ -19,7 +19,8 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 10px 295px;
-    background-color: var(--black);
+    background-color: rgba(0, 0, 0, 0);
+    /*backdrop-filter: blur(10px);*/
     position: fixed;
     top: 0;
     left: 0;
@@ -126,6 +127,43 @@ ul li a {
     margin-top: 30px;
 }
 
-.about {
+#about {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.about-card-approach {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin-top: 10px;
+gap: 20px;
+}
+
+.card-container-list {
+    display: flex;
+    align-items: center;
+    flex-direction: row ;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.about-card-QA {
+    background-color: var(--greynavbar);
+    padding: 20px 40px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    font-weight: 700;
+}
+.about-card-Dev {
+    background-color: var(--greynavbar);
+    padding: 20px 40px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    font-weight: 700;
 }
