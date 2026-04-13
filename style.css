@@ -133,16 +133,15 @@ ul li a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 50px;
 }
 
 .about-card-approach {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-margin-top: 10px;
-gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 20px;
 }
 
 .card-container-list {
@@ -150,22 +149,20 @@ gap: 20px;
     align-items: center;
     gap: 15px;
     list-style: none;
-    flex: 1;
 }
 
 .num {
     background-color: var(--grey);
     color: var(--black);
-    padding: 10px 10px;
-    border-radius: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
     display: flex;
-    justify-content:left;
-
+    justify-content: left;
 }
 
-.about-card-QA, .about-card-Dev {
+.about-card-QA {
     background-color: var(--greynavbar);
-    width: 200px;
+    width: 300px;
     height: 100px;
     padding: 20px 10px;
     gap: 20px;
@@ -175,3 +172,12 @@ gap: 20px;
     display: flex;
     align-items: center;
 }
+
+.card-desc {
+    opacity: 0;
+}
+
+.about-card-QA:hover .card-desc {
+    opacity: 1;
+}
+
