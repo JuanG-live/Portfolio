@@ -1,169 +1,714 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Maria Genova - Porfolio</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.google.com/specimen/Poppins" rel="stylesheet">
-</head>
+    <title>Juan María Génova | QA Engineer & AI Systems Operator</title>
+    <meta name="description" content="Portfolio of Juan María Génova - QA Engineer & AI Systems Operator. Specializing in manual testing, API validation, and AI quality gates.">
+    <meta name="keywords" content="QA Engineer, AI Systems, Playwright, Claude Code, Dublin, Ireland, Juan Maria Genova">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --secondary-bg: #161b22;
+            --text-color: #e6edf3;
+            --secondary-text: #8b949e;
+            --accent-color: #10A37F;
+            --border-color: #30363d;
+            --card-hover: #21262d;
+            --transition: all 0.3s ease;
+        }
+
+        .light-mode {
+            --bg-color: #ffffff;
+            --secondary-bg: #f6f8fa;
+            --text-color: #1f2328;
+            --secondary-text: #656d76;
+            --accent-color: #0e8a6a;
+            --border-color: #d0d7de;
+            --card-hover: #f0f2f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        /* Language Toggle Logic */
+        [lang="en"] .lang-es { display: none; }
+        [lang="es"] .lang-en { display: none; }
+
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .light-mode nav {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-icon {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .btn-icon:hover {
+            background: var(--secondary-bg);
+            border-color: var(--accent-color);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 4rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h2 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--secondary-text);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--accent-color);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            color: var(--secondary-text);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--secondary-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .stat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Experience */
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--accent-color);
+        }
+
+        .exp-item {
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--bg-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .exp-company {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .exp-period {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+
+        .exp-list {
+            list-style: none;
+        }
+
+        .exp-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            background: var(--card-hover);
+            border-color: var(--accent-color);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tag {
+            background: rgba(16, 163, 127, 0.1);
+            color: var(--accent-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            margin-top: auto;
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-group h4 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--secondary-text);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-image {
+                margin: 0 auto;
+                order: -1;
+            }
+            .social-links {
+                justify-content: center;
+            }
+            .nav-links {
+                display: none;
+            }
+            .exp-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
 <body>
-    <header id="hero">
-        <nav class="navbar">
-            <h1 class="nav-logo">JMG</h1>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a> </li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#project">Project</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <div class="hero-text">
-                <h2>Hi, I'm Juan.</h2>
-                <h1>QA Analyst & Junior Developer</h1>
-                <p>QA Analyst with 2+ years of experience finding bugs before your users do. Based in Dublin, originally
-                    from Buenos Aires. I test web and mobile apps, validate APIs with Postman, and I'm currently
-                    levelling up into automation with Cypress. </p>
-                <a href="docs/CV_Juan_Maria_Genova_English.pdf" class="btn" download>Download CV</a>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/juan-genova/" target="_blank">
-                        <i class="fa-brands fa-linkedin">
-                        </i>
-                    </a>
-                    <a href="https://github.com/JuanG-live" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">JMG</a>
+            <div class="nav-links">
+                <a href="#about" class="lang-en">About</a>
+                <a href="#about" class="lang-es">Sobre mí</a>
+                <a href="#experience" class="lang-en">Experience</a>
+                <a href="#experience" class="lang-es">Experiencia</a>
+                <a href="#projects" class="lang-en">Projects</a>
+                <a href="#projects" class="lang-es">Proyectos</a>
+                <a href="#skills" class="lang-en">Skills</a>
+                <a href="#skills" class="lang-es">Habilidades</a>
             </div>
-            <div class="hero-image">
-                <img src="img/Foto-perfil.jpg" alt="Juan Genova">
+            <div class="controls">
+                <button id="lang-toggle" class="btn-icon" aria-label="Toggle Language">
+                    <span class="lang-en">ES</span>
+                    <span class="lang-es">EN</span>
+                </button>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
-    </header>
-    <main>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h2 class="lang-en">QA Engineer & AI Systems Operator</h2>
+                    <h2 class="lang-es">QA Engineer & Operador de Sistemas de IA</h2>
+                    <h1 class="lang-en">Juan María Génova</h1>
+                    <h1 class="lang-es">Juan María Génova</h1>
+                    <p class="lang-en">I ensure quality in systems where AI writes the code.</p>
+                    <p class="lang-es">Garantizo la calidad en sistemas donde la IA escribe el código.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/JuanG-live" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/juanmgenova" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:juanmgenova@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="docs/CV_Juan_Maria_Genova_English.pdf" download aria-label="Download CV"><i class="fas fa-file-pdf"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="img/Foto-perfil.jpg" alt="Juan María Génova">
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
         <section id="about">
-            <h1>About Me</h1>
-            <p><br>Hey there! I'm Juan, a QA Analyst based in Dublin with 2+ years of experience testing web and mobile
-                applications. I specialize in manual testing, API validation with Postman and SQL,<br> and I'm currently
-                <br>
-                transitioning into automation with Cypress and JavaScript. I'm looking for new opportunities where I
-                can keep growing and help teams ship better products.
-            </p>
-            <div class="about-card-approach">
-                <h3> My Approach</h3>
-                <div class="card-container">
-                    <ul class="card-container-list">
-                        <li class="about-card-QA">
-                            <span class="num
-                            "> 01 </span>
-                            <p> Quality-First Mindset</p>
-                            <p class="card-desc">Prioritize quality</p>
-                        </li>
-                        <li class="about-card-QA">
-                            <span class="num">02</span>
-                            <p>Technical Validation</p>
-                            <p class="card-desc">API testing, SQL checks, Postman</p>
-                        </li>
-                        <li class="about-card-QA">
-                            <span class="num"> 03 </span>
-                            <p> Build & Iterate</p>
-                            <p class="card-desc">build with purpose</p>
-                        </li>
-                    </ul>
+            <h2 class="section-title lang-en">Key Achievements</h2>
+            <h2 class="section-title lang-es">Logros Clave</h2>
+            <div class="achievements-grid">
+                <div class="stat-card">
+                    <i class="fas fa-bug"></i>
+                    <h3>90%</h3>
+                    <p class="lang-en">Defect detection rate before UAT</p>
+                    <p class="lang-es">Tasa de detección de defectos antes de UAT</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-plug"></i>
+                    <h3>15</h3>
+                    <p class="lang-en">Critical defects caught via API testing</p>
+                    <p class="lang-es">Defectos críticos detectados vía API testing</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>4h</h3>
+                    <p class="lang-en">Saved per sprint via Visual Coverage Matrix</p>
+                    <p class="lang-es">Ahorradas por sprint vía Visual Coverage Matrix</p>
                 </div>
             </div>
         </section>
-        <section id="skills">
-            <div>
-                <h4>Skills</h4>
-            </div>
-            <div>
-                <div class="skills-grid">
-                    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
-                        alt="JavaScript">
-                    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
-                        alt="HTML5">
-                    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
-                        alt="CSS3">
-                    <img src="https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white"
-                        alt="Cypress">
-                    <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"
-                        alt="Postman">
-                    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"
-                        alt="Git">
-                    <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white"
-                        alt="Jira">
-                    <img src="https://img.shields.io/badge/Azure_DevOps-0078D7?style=for-the-badge&logo=azure-devops&logoColor=white"
-                        alt="Azure DevOps">
-                    <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"
-                        alt="SQL">
-                    <img src="https://img.shields.io/badge/Manual_Testing-6DB33F?style=for-the-badge&logoColor=white"
-                        alt="Manual Testing">
-                    <img src="https://img.shields.io/badge/Agile_Scrum-0099CC?style=for-the-badge&logoColor=white"
-                        alt="Agile Scrum">
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2 class="section-title lang-en">Work Experience</h2>
+            <h2 class="section-title lang-es">Experiencia Laboral</h2>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3 class="lang-en">QA Lead — AI Agentforce</h3>
+                        <h3 class="lang-es">QA Lead — Agentforce de IA</h3>
+                        <div class="exp-company">Acento Digital</div>
+                    </div>
+                    <div class="exp-period lang-en">2026 – Present</div>
+                    <div class="exp-period lang-es">2026 – Presente</div>
                 </div>
+                <ul class="exp-list lang-en">
+                    <li>Supervising 300+ AI agents in production</li>
+                    <li>Human quality gate for July 9 Lobería launch</li>
+                    <li>QA across web, helena, kernel repos</li>
+                </ul>
+                <ul class="exp-list lang-es">
+                    <li>Supervisando 300+ agentes de IA en producción</li>
+                    <li>Human gate para lanzamiento del 9 de julio en Lobería</li>
+                    <li>QA en repos web, helena, kernel</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3 class="lang-en">QA Analyst — Sole QA Owner</h3>
+                        <h3 class="lang-es">QA Analyst — Sole QA Owner</h3>
+                        <div class="exp-company">Albor Agro</div>
+                    </div>
+                    <div class="exp-period lang-en">Aug 2023 – Jun 2025</div>
+                    <div class="exp-period lang-es">Ago 2023 – Jun 2025</div>
+                </div>
+                <ul class="exp-list lang-en">
+                    <li>3000+ test executions across web and mobile</li>
+                    <li>API testing with Postman across 10-15 critical endpoints</li>
+                    <li>SQL Server data validation via T-SQL</li>
+                </ul>
+                <ul class="exp-list lang-es">
+                    <li>3000+ ejecuciones de tests en web y mobile</li>
+                    <li>API testing con Postman en 10-15 endpoints críticos</li>
+                    <li>Validación de datos SQL Server via T-SQL</li>
+                </ul>
             </div>
         </section>
+
+        <!-- Projects -->
         <section id="projects">
-            <div class="project-card">
-                <h4> Projects</h4>
+            <h2 class="section-title lang-en">Featured Projects</h2>
+            <h2 class="section-title lang-es">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>Acento Digital — Town OS</h3>
+                    <p class="lang-en">QA Lead supervising 300+ AI agents for Lobería town launch.</p>
+                    <p class="lang-es">QA Lead supervisando 300+ agentes de IA para lanzamiento en Lobería.</p>
+                    <div class="project-tech">
+                        <span class="tag">Helena CLI</span>
+                        <span class="tag">Claude Code</span>
+                        <span class="tag">Linear</span>
+                        <span class="tag">GitHub</span>
+                    </div>
+                    <a href="https://acento.digital" target="_blank" class="project-link">
+                        Visit Project <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>medical-reminders</h3>
+                    <p class="lang-en">React medical reminders app with own test cases.</p>
+                    <p class="lang-es">App React de recordatorios médicos con test cases propios.</p>
+                    <div class="project-tech">
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Azure DevOps</span>
+                    </div>
+                    <a href="https://github.com/JuanG-live/medical-reminders" target="_blank" class="project-link">
+                        View Repo <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>fulbo--mdq</h3>
+                    <p class="lang-en">Football match organizer — Next.js 14.</p>
+                    <p class="lang-es">Organizador de partidos de fútbol — Next.js 14.</p>
+                    <div class="project-tech">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Tailwind CSS</span>
+                    </div>
+                    <a href="https://github.com/JuanG-live/fulbo--mdq" target="_blank" class="project-link">
+                        View Repo <i class="fab fa-github"></i>
+                    </a>
+                </div>
             </div>
-            <ul class="">
-                <li class="">
-                    <div class="">
-                        <h3 class="">
-                            Cypress-Curso
-                        </h3>
-                        <p class="">
-
-                        </p>
-                    </div>
-                </li>
-                <li class="">
-                    <div class="">
-                        <h3 class="">
-                            Bot-Telegram-Fly (In progress)
-                        </h3>
-                        <p class="">
-
-                        </p>
-                    </div>
-                </li>
-                <li class="">
-                    <div class="">
-                        <h3 class="">
-                            Medical-reminders (In progress)
-                        </h3>
-                        <p class="">
-
-                        </p>
-                    </div>
-                </li>
-                <li class="">
-                    <div class="">
-                        <h3 class="">
-                            Futbol--MDQ
-                        </h3>
-                        <p class="">
-
-                        </p>
-                    </div>
-                </li>
-            </ul>
         </section>
-        <section id="contact">
-            <h4>Hire me</h4>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2 class="section-title lang-en">Skills & Tools</h2>
+            <h2 class="section-title lang-es">Habilidades y Herramientas</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4 class="lang-en">Testing</h4>
+                    <h4 class="lang-es">Testing</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Manual QA</span>
+                        <span class="skill-tag">Regression</span>
+                        <span class="skill-tag">Smoke</span>
+                        <span class="skill-tag">Exploratory</span>
+                        <span class="skill-tag">Mobile</span>
+                        <span class="skill-tag">API</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4 class="lang-en">Tools</h4>
+                    <h4 class="lang-es">Herramientas</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">Cypress</span>
+                        <span class="skill-tag">Playwright</span>
+                        <span class="skill-tag">Claude Code</span>
+                        <span class="skill-tag">Helena CLI</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4 class="lang-en">Databases</h4>
+                    <h4 class="lang-es">Bases de Datos</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">T-SQL</span>
+                        <span class="skill-tag">Cloudflare D1</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4 class="lang-en">Languages</h4>
+                    <h4 class="lang-es">Idiomas</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag lang-en">Spanish (Native)</span>
+                        <span class="skill-tag lang-es">Español (Nativo)</span>
+                        <span class="skill-tag lang-en">English (Professional)</span>
+                        <span class="skill-tag lang-es">Inglés (Profesional)</span>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
     <footer>
-        <div>
-            <p>© 2026 Juan Maria Genova. All rights Reserved</p>
+        <div class="container">
+            <p>&copy; 2026 Juan María Génova. <span class="lang-en">Built with Vanilla HTML/CSS/JS.</span><span class="lang-es">Creado con HTML/CSS/JS Vanilla.</span></p>
         </div>
     </footer>
-</body>
 
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        
+        if (currentTheme === 'light') {
+            document.body.classList.add('light-mode');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            themeIcon.classList.replace(isLight ? 'fa-moon' : 'fa-sun', isLight ? 'fa-sun' : 'fa-moon');
+        });
+
+        // Language Toggle
+        const langToggle = document.getElementById('lang-toggle');
+        const html = document.documentElement;
+        
+        const currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('es') ? 'es' : 'en');
+        html.setAttribute('lang', currentLang);
+
+        langToggle.addEventListener('click', () => {
+            const newLang = html.getAttribute('lang') === 'en' ? 'es' : 'en';
+            html.setAttribute('lang', newLang);
+            localStorage.setItem('lang', newLang);
+        });
+
+        // Smooth Appearance on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.6s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
 </html>
